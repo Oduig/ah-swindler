@@ -1,2 +1,4 @@
-# ah-swindler
-WoW Auction House Trading Tool
+auction-swindler
+===============
+
+Auction House Swindler for WoW Classic
