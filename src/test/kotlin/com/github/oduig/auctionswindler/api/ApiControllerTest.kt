@@ -4,18 +4,18 @@ import io.mockk.*
 import org.junit.Assert
 import org.junit.Test
 
-class AuctionSwindlerControllerTest {
+class ApiControllerTest {
 
-  private var starterServiceMock = mockk<AuctionSwindlerService>()
+  private var apiServiceMock = mockk<ApiService>()
 
-  private val starterController = AuctionSwindlerController(starterServiceMock)
+  private val apiController = ApiController(apiServiceMock)
 
   @Test
   fun homeTest() {
     // given
 
     // when
-    val reply = starterController.home()
+    val reply = apiController.home()
 
     // then
     Assert.assertEquals("Auction House Swindler is online!", reply.message)
@@ -27,7 +27,7 @@ class AuctionSwindlerControllerTest {
     givenAuctionSwindlerServiceWaits()
 
     // when
-    val reply = starterController.sloth()
+    val reply = apiController.sloth()
 
     // then
     Assert.assertEquals("...", reply.message)
@@ -35,10 +35,10 @@ class AuctionSwindlerControllerTest {
   }
 
   private fun givenAuctionSwindlerServiceWaits() {
-    every { starterServiceMock.waitForABit() } just Runs
+    every { apiServiceMock.waitForABit() } just Runs
   }
 
   private fun thenAuctionSwindlerServiceWaited() {
-    verify { starterServiceMock.waitForABit() }
+    verify { apiServiceMock.waitForABit() }
   }
 }

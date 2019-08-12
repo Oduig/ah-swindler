@@ -1,4 +1,4 @@
-starter:
+auction-swindler:
   web-client:
     connect-timeout-ms: 7_000
     request-timeout-seconds: 3

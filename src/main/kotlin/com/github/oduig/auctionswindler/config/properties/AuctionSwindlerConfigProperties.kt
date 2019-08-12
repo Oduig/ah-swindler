@@ -7,5 +7,6 @@ data class AuctionSwindlerConfigProperties(
     // These need to be nullable so Spring Boot can load them
     var slothDelayMs: Long? = null,
     var cors: CorsConfigProperties? = CorsConfigProperties(),
-    var webClient: WebClientConfigProperties? = WebClientConfigProperties()
+    var webClient: WebClientConfigProperties? = WebClientConfigProperties(),
+    var prettyJson: Boolean = false
 )

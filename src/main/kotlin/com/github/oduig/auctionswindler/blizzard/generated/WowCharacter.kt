@@ -1,0 +1,31 @@
+package com.github.oduig.auctionswindler.blizzard.generated
+
+data class WowCharacter(
+    val _links: Links,
+    val achievement_points: Int,
+    val achievements: Achievements,
+    val active_spec: ActiveSpec,
+    val active_title: ActiveTitle,
+    val appearance: Appearance,
+    val average_item_level: Int,
+    val character_class: CharacterClass,
+    val collections: Collections,
+    val equipment: Equipment,
+    val equipped_item_level: Int,
+    val experience: Int,
+    val faction: Faction,
+    val gender: Gender,
+    val id: Int,
+    val last_login_timestamp: Long,
+    val level: Int,
+    val media: Media,
+    val mythic_keystone_profile: MythicKeystoneProfile,
+    val name: String,
+    val pvp_summary: PvpSummary,
+    val race: Race,
+    val raid_progression: RaidProgression,
+    val realm: Realm,
+    val specializations: Specializations,
+    val statistics: Statistics,
+    val titles: Titles
+)

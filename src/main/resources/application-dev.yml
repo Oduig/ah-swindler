@@ -1,3 +1,4 @@
+#spring:
 # Uncomment for full SQL query logging
 #  jpa:
 #    show-sql: true
@@ -5,3 +6,6 @@
 #logging:
 #  level:
 #    com.github.oduig: DEBUG
+
+auction-swindler:
+  pretty-json: "true"

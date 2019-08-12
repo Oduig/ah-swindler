@@ -1,5 +1,6 @@
 package com.github.oduig.auctionswindler.api
 
+import com.github.oduig.auctionswindler.blizzard.BlizzardApi
 import com.github.oduig.auctionswindler.config.properties.AuctionSwindlerConfigProperties
 import com.github.oduig.auctionswindler.util.SoundSleeper
 import io.mockk.every
@@ -7,21 +8,22 @@ import io.mockk.mockk
 import io.mockk.verify
 import org.junit.Test
 
-class AuctionSwindlerServiceTest {
+class ApiServiceTest {
 
-  private val starterConfigProperties = AuctionSwindlerConfigProperties(slothDelayMs = 100)
+  private val auctionSwindlerConfigProperties = AuctionSwindlerConfigProperties(slothDelayMs = 100)
 
   private var soundSleeperMock = mockk<SoundSleeper>()
+  private var blizzardApiMock = mockk<BlizzardApi>()
 
-  private val starterService = AuctionSwindlerService(starterConfigProperties, soundSleeperMock)
+  private val apiService = ApiService(auctionSwindlerConfigProperties, soundSleeperMock, blizzardApiMock)
 
   @Test
-  fun starterServiceTest() {
+  fun apiServiceTest() {
     // given
     givenSoundSleeperSleepsFor(100)
 
     // when
-    starterService.waitForABit()
+    apiService.waitForABit()
 
     // then
     thenSoundSleeperSlept()
